@@ -7,7 +7,7 @@ function upLocalStorage(){
     formEl.onsubmit = function(e){
         e.preventDefault()
         if(localStorage){
-            let listOfElements = localStorage.getItem('listoflements')
+            let listOfElements = localStorage.getItem('groupOfElements')
             let elements = listOfElements ? JSON.parse(listOfElements) : []
             let firstName = firstNameInput.value
             let lastName = lastNameInput.value
@@ -21,7 +21,9 @@ function upLocalStorage(){
                 li.innerText = elements[i]
                 ol.appendChild(li)
             }
-        document.querySelector('body').appendChild('ol')
+        console.log(elements)
+        document.querySelector('body').appendChild(ol)
         }
     }
 }
+upLocalStorage()
